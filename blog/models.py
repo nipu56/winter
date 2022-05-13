@@ -3,6 +3,15 @@ from django.utils.encoding import *
 from django.db import models
 from django.urls import reverse
 
+class Category(models.Model):
+    category_name = models.CharField('Category')
+    parent = models.Foreignkey('self',on_delete=models.CASCADE,blank=True;null =True)
+    
+    class Meta:
+        unique_together = ["category_name"]
+    
+    def __str__(self):
+        return self.category_name
 
 class Post(models.Model):
     title = models.CharField('TITLE', max_length=50)  # 제목
@@ -11,6 +20,7 @@ class Post(models.Model):
     content = models.TextField('CONTENT')  # 내용
     create_date = models.DateTimeField('CREATE_DATE', auto_now_add=True)  # 생성날짜
     modify_date = models.DateTimeField('MODIFY_DATE', auto_now=True)  # 수정날짜
+    category = models.Foreignkey(Category,on_delete=models.CASCADE,null=True)
 
     class Meta:  # 파라미터
         verbose_name = 'post'  # 별칭 이름
