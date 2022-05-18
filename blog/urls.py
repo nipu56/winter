@@ -9,5 +9,5 @@ urlpatterns = [
     re_path(r'^(?P<year>\d{4})/$', PostYAV.as_view(), name='post_year_archive'),  # /post/2012/
     re_path(r'^(?P<year>\d{4})/(?P<month>[a-z]{3})/$', PostMAV.as_view(), name='post_month_archive'),  # /post/2012/mon/
     re_path(r'^(?P<year>\d{4})/(?P<month>[a-z]{3})/(?P<day>\d{1,2})/$', PostDAV.as_view(), name='post_day_archive'),  # /post/2012/mon/12/
-    re_path(r'today/$', PostTAV.as_view(), name='post_today_archive')  # /post/today/
+    re_path(r'today/$', PostTAV.as_view(), name='post_today_archive'),  # /post/today/
 ]
