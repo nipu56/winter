@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import re_path, include
-
+from winter.views import HomeView
 urlpatterns = [
     re_path('admin/', admin.site.urls),# /admin/
     
