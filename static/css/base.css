@@ -1,33 +1,78 @@
-body{
-  font-family : "Lucida Grande", Verdana, Arial, sans-serif;
-  font-size : 12px;
+@charset "utf-8";
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
+
+a:hover,
+a:focus {
+  outline: none;
+}
+::selection,
+::-moz-selection {
+  background : #39f;
+  color      : #fff;
+  text-shadow: none;
+}
+::selection,
+::-moz-selection {
+  background : #39f;
+  color      : #fff;
+  text-shadow: none;
+}
+a {
+  text-decoration: none;
+}
+html {
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size                  : 16px;
+  font-weight                : normal;
+  line-height                : 1.5;
+  background-color           : #fff;
+  color                      : #4d5058;
+  -webkit-text-size-adjust   : 100%;
+  -webkit-font-smoothing     : antialiased;
+  -moz-osx-font-smoothing    : grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+body{
+  font-family: "빙그레체", serif;
+  margin: 0;
+}
+ul, li{
+  list-style: none;
+}
+header,section,article,aside,footer,main,a,button,input,textarea,img,nav,ul,ol,li,p,h1,h2,h3,h4,h5,h6,div,span{
+  margin   : 0;
+  padding  : 0;
+  /* 폰트 크기 상속 */
+  font-size: inherit;
+}
+
 div#header{
   position : absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
+  top: 10px;
+  left: 20px;
   width: 100%;
-  display: table;
-  background: orange;
 }
 div#menu{
   position : absolute;
-  top:30px;
-  left: 0;
-  height:20px;
+  top: 100px;
+  left: 20px;
   width: 100%;
-  display:table;
-  table-layout: fixed;
-  table-spacing: 40px 0px;
-  background: #ffa;
-  font-size: 8px;
 }
 div#content{
   position: absolute;
-  top: 70px;
-  left: 50px;
-  right:50px;
+  top: 150px;
+  left: 400px;
+  color: black;
+
 }
 div#footer{
   position: absolute;
@@ -35,72 +80,64 @@ div#footer{
   left: 50px;
   right: 50px;
   height: 30px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #000000;
 }
 /* HEADER */
 .maintitle{
-  display: table-cell;
-  vertical-align: middle;
-  padding-left: 20px;
-  color: #ffc;
+  color: #000000;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 30px;
 }
-.welcome{
-  display: table-cell;
-  vertical-align: middle;
-  text-align: right;
-  padding-right: 20px;
-  color: #ffc;
-  font-weight: normal;
-  font-size: 12px;
-  
-}
-.welcome a:link, .welcome a:visited{
-  color: white;
-}
-  /*menu*/
-  div#menu a:link, div#menu a:visited{
-    color:#36c;
-  }
+/*menu*/
   div#menu > li{
-    display: table-cell;
-    vertical-align: middle;
-    border: 2px solid #bbb;
-    border-radius: 25px;
-    text-align: center;
     font-weight: bold;
-    
+    font-size: 15px;
+    color: black;
+    padding-top: 10px;
 }
-/* pulldown */
-div#menu li ul{
-    display: none;
-    position:absolute;
-    margin: 0;
-    padding: 10px 10px 5px 10px;
-    list-style: none;
-    border-right: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background: white;
-    z-index: 1;
+ div#menu a {
+  position: relative;
+  overflow: hidden;
+   padding: 0 0 5px;
+   color: black;
+ }
+ div#menu a:after {
+    background: #000000;
+    content: '';
+  height: 2px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transform: translate3d(-100%, 0, 0);
+    width: 100%;
 }
-div#menu li:hover ul{
-  display: block;
+ div#menu a:hover::after {
+    animation: link-hoverstate .5s linear forwards;
+    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-a:link, a:visited{
-  color: #369;
-  text-decoration: none;
-  
-}
-a:hover {
-  text-decoration: underline;
+@keyframes link-hoverstate {
+ 0% {
+  opacity:1;
+  transform:translate3d(-100%, 0, 0)
+ }
+ 55% {
+  transform:translate3d(100%, 0, 0)
+ }
+ 56% {
+  transform:translate3d(100%, calc(0.5rem + 4px), 0)
+ }
+ 100% {
+  opacity:1;
+  transform:translate3d(0, calc(0.5rem + 4px), 0)
+ }
 }
 
 /* TABLE */
 table{
   border-collapse: collapse;
-  
 }
 
 td, th{
