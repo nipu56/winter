@@ -4,7 +4,7 @@
 <html lang = "en">
   
   <head>
-    <title>{% block title %}Django Web Programing {% endblock %}</title>
+    <title>{% block site %}Django Web Programing {% endblock %}</title>
     {% load static%}
     <link rel="stylesheet" type = "text/css" href="{% static "css/base.css" %}" />
     <link rel="stylesheet" type = "text/css" href="{% block extrastyle %}{% endblock %}" />
@@ -17,12 +17,14 @@
       <h4 class = "maintitle">Winter </h4>
     </div>
     <div id ="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Archive</a></li>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'blog:index' %}">Blog</a></li>
+      <li><a href="{% url 'blog:post_archive' %}">Archive</a></li>
       <li><a href="#">Search</a></li>
-      <li><a href="#">Admin</a></li>
+      <li><a href="{% url 'admin:index' %}">Admin</a></li>
     </div>
+      {% block title %}
+      {% endblock %}
       {% block content %}
       {% endblock %}
 

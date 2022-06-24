@@ -8,8 +8,12 @@
 }
 
 a:hover,
-a:focus {
-  outline: none;
+a:focus,
+a:visited,
+a:hover,
+a:link{
+    color: black;
+    text-decoration: none;
 }
 ::selection,
 ::-moz-selection {
@@ -23,9 +27,7 @@ a:focus {
   color      : #fff;
   text-shadow: none;
 }
-a {
-  text-decoration: none;
-}
+
 html {
   font-family: -apple-system,
     BlinkMacSystemFont,
@@ -41,9 +43,13 @@ html {
   -moz-osx-font-smoothing    : grayscale;
   -webkit-tap-highlight-color: transparent;
 }
+
+
+/* html 디자인*/
 body{
   font-family: "빙그레체", serif;
   margin: 0;
+    color: black;
 }
 ul, li{
   list-style: none;
@@ -67,12 +73,18 @@ div#menu{
   left: 20px;
   width: 100%;
 }
+div#title{
+    position: absolute;
+  top: 10px;
+  left: 400px;
+  color: black;
+}
 div#content{
   position: absolute;
   top: 150px;
   left: 400px;
   color: black;
-
+  display: inline-block;
 }
 div#footer{
   position: absolute;
@@ -89,52 +101,10 @@ div#footer{
   font-size: 30px;
 }
 /*menu*/
-  div#menu > li{
-    font-weight: bold;
-    font-size: 15px;
-    color: black;
-    padding-top: 10px;
-}
- div#menu a {
-  position: relative;
-  overflow: hidden;
-   padding: 0 0 5px;
-   color: black;
- }
- div#menu a:after {
-    background: #000000;
-    content: '';
-  height: 2px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-    left: 0;
-    opacity: 0;
-    position: absolute;
-    transform: translate3d(-100%, 0, 0);
-    width: 100%;
-}
- div#menu a:hover::after {
-    animation: link-hoverstate .5s linear forwards;
-    animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-@keyframes link-hoverstate {
- 0% {
-  opacity:1;
-  transform:translate3d(-100%, 0, 0)
- }
- 55% {
-  transform:translate3d(100%, 0, 0)
- }
- 56% {
-  transform:translate3d(100%, calc(0.5rem + 4px), 0)
- }
- 100% {
-  opacity:1;
-  transform:translate3d(0, calc(0.5rem + 4px), 0)
- }
-}
+div#menu > a
+{
 
+}
 /* TABLE */
 table{
   border-collapse: collapse;
