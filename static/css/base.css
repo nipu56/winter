@@ -44,8 +44,6 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-
-/* html 디자인*/
 body{
   font-family: "빙그레체", serif;
   margin: 0;
@@ -61,6 +59,8 @@ header,section,article,aside,footer,main,a,button,input,textarea,img,nav,ul,ol,l
   font-size: inherit;
 }
 
+
+/* html 디자인*/
 div#header{
   position : absolute;
   top: 10px;
@@ -81,7 +81,7 @@ div#title{
 }
 div#content{
   position: absolute;
-  top: 150px;
+  top: 80px;
   left: 400px;
   color: black;
   display: inline-block;
@@ -101,10 +101,7 @@ div#footer{
   font-size: 30px;
 }
 /*menu*/
-div#menu > a
-{
 
-}
 /* TABLE */
 table{
   border-collapse: collapse;

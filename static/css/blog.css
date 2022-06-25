@@ -1,0 +1,11 @@
+div#content > li{
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+div#page{
+  top: 200px;
+  left: 200px;
+
+}
